@@ -7,24 +7,27 @@
 ### Djangoを用いたWebサイトの作成
 
 ## サンプルコード
+### views.py
 ```python
-# views.py
 from django.shortcuts import render
 from .models import WeatherData
 
 def index(request):
     data = WeatherData.objects.all()
     return render(request, 'index.html', {'data': data})
-
-# urls.py
+```
+### urls.py
+```python
 from django.urls import path
-from . import views
+from myapp import views
 
 urlpatterns = [
     path('', views.index, name='index'),
 ]
 
-# models.py
+```
+### models.py
+```python
 from django.db import models
 
 class WeatherData(models.Model):
@@ -54,6 +57,8 @@ python manage.py startapp myapp
 
 ### 4. データベースの設定
 Djangoでデータベースを操作するための設定を行います。settings.pyを編集します。
+今回はデフォルトのデータベースである SQLite を使用するため編集しません。
+Django では PostgreSQL や MySQL などのデータベースを使用することができます。
 
 ### 5. ビューの作成
 DjangoでWebページを表示するためのビューを作成します。views.pyを編集します。

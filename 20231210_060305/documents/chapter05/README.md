@@ -14,11 +14,11 @@
 django-admin startproject mysite
 
 ## 作業手順
-1. Djangoの管理コマンド`django-admin startproject mysite`を実行して新しいWebサイトを作ります。
+1. Django Web アプリケーションの作成
 2. `mysite/mysite/models.py`に`WeatherData`モデルを追加します。
 3. `python manage.py makemigrations`と`python manage.py migrate`を実行してデータベースにテーブルを作ります。
 4. Pandasで分析したデータをCSVファイル（`data.csv`）に保存します。
-5. `python manage.py shell`を実行してDjangoのシェルを起動し、上記のサンプルコードを使ってデータをインポートします。
+5. csv データから Django へデータをインポートする。
 6. `mysite/mysite/views.py`に`weather_view`ビューを追加します。
 7. `mysite/mysite/urls.py`に`weather_view`へのURLパターンを追加します。
 8. `mysite/mysite/templates/weather.html`にデータを表示するためのテンプレートを作ります。
