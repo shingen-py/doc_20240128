@@ -1,76 +1,47 @@
-# "4. Djangoを用いたWebサイトの作成"
+#### 1. イントロダクション
+- **目的**: Python の Web フレームワークである Django を使った Web サイトの作成について学ぶ。
+- **対象読者**: GoogleColab を一度でも使ったことがあり、Enter を押すことができる方
 
-## 教材概要
-この教材では、PythonのWebフレームワークであるDjangoを使ったWebサイトの作成について学びます。具体的には、Djangoの基本的な使い方から、テンプレートの作成、URLルーティング、データベースの操作、そして結果のWeb上での公開までを順を追って学びます。
+#### 2. Django のインストール
+- **内容**: Django のインストール
+- **実践**: 実際にコマンドラインを使用してライブラリをインストールする手順を説明。
 
-## 教材テキスト
-### Djangoを用いたWebサイトの作成
+#### 3. Django のプロジェクトの作成
+- **内容**: Django のプロジェクトの作成
+- **実践**: 実際にコマンドラインを使用して Django のプロジェクトの作成方法について説明
 
-## サンプルコード
-### views.py
-```python
-from django.shortcuts import render
-from .models import WeatherData
+#### 4. Django アプリケーションの作成
+- **内容**: Django のアプリケーションの作成
+- **実践**: 実際にコマンドラインを使用して Django のアプリケーションの作成方法について説明
 
-def index(request):
-    data = WeatherData.objects.all()
-    return render(request, 'index.html', {'data': data})
-```
-### urls.py
-```python
-from django.urls import path
-from myapp import views
+#### 5. Django の動作確認
+- **内容**: Django の起動
+- **実践**: 実際にコマンドラインを使用して Django のデモサーバーの起動方法を学ぶ
 
-urlpatterns = [
-    path('', views.index, name='index'),
-]
+#### 6. Django のデータベース
+- **内容**: Django のデータベースについて
+- **実践**: Django のデータベースについて説明する
 
-```
-### models.py
-```python
-from django.db import models
+#### 7. Django の views.py
+- **内容**: Django の views.py の書き方などを説明
+- **実践**: 実際に views.py を読み、書き方などを説明する
 
-class WeatherData(models.Model):
-    date = models.DateField()
-    temperature = models.FloatField()
-    rainfall = models.FloatField()
-```
+#### 9. Django の models.py
+- **内容**: Django の models.py の書き方などを説明
+- **実践**: 実際に models.py を読み、書き方などを説明する
 
-## 作業手順
-### 1. Djangoの環境設定
-まずはDjangoの環境を設定します。以下のコマンドでDjangoをインストールします。
-```
-pip install django
-```
+#### 10. Django の urls.py 
+- **内容**: Django の urls.py の書き方などを説明
+- **実践**: 実際に urls.py を読み、書き方などを説明する
 
-### 2. Djangoプロジェクトの作成
-次にDjangoのプロジェクトを作成します。以下のコマンドでプロジェクトを作成します。
-```
-django-admin startproject mysite
-```
+#### 11. Django のテンプレートシステム
+- **内容**: Django のテンプレート html 
+- **実践**: 実際のテンプレート html を読みながら説明する。
 
-### 3. Djangoアプリケーションの作成
-プロジェクト内にアプリケーションを作成します。以下のコマンドでアプリケーションを作成します。
-```
-python manage.py startapp myapp
-```
+#### 12. Django に初期データ投入
+- **内容**: Django のデータベースへの連携について
+- **実践**: データベースに初期データの投入をしながら、仕組みについて説明する
 
-### 4. データベースの設定
-Djangoでデータベースを操作するための設定を行います。settings.pyを編集します。
-今回はデフォルトのデータベースである SQLite を使用するため編集しません。
-Django では PostgreSQL や MySQL などのデータベースを使用することができます。
-
-### 5. ビューの作成
-DjangoでWebページを表示するためのビューを作成します。views.pyを編集します。
-
-### 6. URLのルーティング
-URLをビューに接続します。urls.pyを編集します。
-
-### 7. テンプレートの作成
-Webページの見た目を決めるテンプレートを作成します。templatesディレクトリにhtmlファイルを作成します。
-
-### 8. Djangoサーバーの起動
-最後にDjangoのサーバーを起動して、Webサイトが正しく動作するか確認します。
-```
-python manage.py runserver
-```
+#### 13. 作成した Web アプリケーション
+- **内容**: 作成した Web アプリケーションの確認
+- **実践**: 実際のコマンドラインを見ながら実施する。

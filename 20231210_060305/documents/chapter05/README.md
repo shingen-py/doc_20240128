@@ -1,25 +1,39 @@
-# Python, Django, Pandasを用いた気象データ分析結果のWeb公開
+#### 1. イントロダクション
+- **目的**: Django, Pandas を使いデータのビジュアライズを行う。
+- **対象読者**: GoogleColab を一度でも使ったことがあり、Enter を押すことができる方
 
-## 教材概要
-この教材では、PythonのWebフレームワークであるDjangoを使って、Pandasで分析した山梨県の気象データをWeb上で公開する方法を学びます。教材は、Webサイトの設定、データのインポート、データの表示の3つの部分に分かれています。
+#### 2. 必要ライブラリのインストールおよびアプリケーションの作成
+- **内容**: 各種ライブラリのインストールおよびアプリケーションの作成
+- **実践**: 実際にコマンドラインを使用してライブラリをインストールする手順を説明。
 
-## 教材テキスト
-1. Djangoで新しいWebサイトを作成します。これには、Djangoの管理コマンドを使用します。
-2. Djangoのデータベースに、Pandasで分析したデータをインポートします。このために、DjangoのORMを使用します。
-3. Djangoのビューとテンプレートを使用して、インポートしたデータをWebページ上に表示します。
+#### 3. models.py の編集
+- **内容**: models.py を編集し WeatherData モデルを作成する
+- **実践**: 実際のコードを読む
 
-## サンプルコード
-```python
-# Djangoの管理コマンドで新しいWebサイトを作成
-django-admin startproject mysite
+#### 4. Django に初期データ投入
+- **内容**: WeatherData をデータベースに反映させる
+- **実践**: 実際のコマンドラインを見ながら演習を行う
 
-## 作業手順
-1. Django Web アプリケーションの作成
-2. `mysite/mysite/models.py`に`WeatherData`モデルを追加します。
-3. `python manage.py makemigrations`と`python manage.py migrate`を実行してデータベースにテーブルを作ります。
-4. Pandasで分析したデータをCSVファイル（`data.csv`）に保存します。
-5. csv データから Django へデータをインポートする。
-6. `mysite/mysite/views.py`に`weather_view`ビューを追加します。
-7. `mysite/mysite/urls.py`に`weather_view`へのURLパターンを追加します。
-8. `mysite/mysite/templates/weather.html`にデータを表示するためのテンプレートを作ります。
-9. `python manage.py runserver`を実行してWebサイトを起動します。ブラウザで`http://localhost:8000/weather`にアクセスすると、インポートしたデータが表示されます。
+#### 5. データの取得
+- **内容**: Chapter3 で取得したデータを data.csv として保存する
+- **実践**: 実際のコマンドラインを見ながら演習を行う
+
+#### 6. データの投入
+- **内容**: Chapter3 で取得したデータを Django へインポートする
+- **実践**: 実際のコマンドラインを見ながら演習を行う
+
+#### 7. views.py の編集
+- **内容**: views.py を編集し index ビューを作成する
+- **実践**: 実際のコードを読む
+
+#### 8. urls.py の編集
+- **内容**: urls.py を編集し index ビューにアクセスできるようにする
+- **実践**: 実際のコードを読む
+
+#### 9. index.html の作成
+- **内容**: 表示用の html を作成する
+- **実践**: 実際のコードを読む
+
+#### 10. アプリケーションの起動
+- **内容**: アプリケーションを起動してグラフを表示する
+- **実践**: 実際のコードを読む
